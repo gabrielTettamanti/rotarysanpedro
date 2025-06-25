@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import News from './pages/News';
 import Join from './pages/Join';
 import Contact from './pages/Contact';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug/:id" element={<ProjectDetail />} />
             <Route path="/news" element={<News />} />
             <Route path="/join" element={<Join />} />
             <Route path="/contact" element={<Contact />} />
