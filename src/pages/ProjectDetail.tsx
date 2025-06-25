@@ -9,15 +9,9 @@ function ProjectDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Aquí puedes hacer una llamada a una API o buscar en tus datos locales
-    // para obtener la información del proyecto usando 'slug' y 'id'.
-    // Por ejemplo: fetch(`/api/projects?slug=${slug}&id=${id}`);
-
     setLoading(true);
     setError(null);
 
-    // Simulación de una carga de datos
-    setTimeout(() => {
       if (slug === "paseo_rotario" && id) {
         setProjectData({
           title: "Paseo Rotario",
@@ -27,8 +21,7 @@ function ProjectDetail() {
         setError("Proyecto no encontrado.");
       }
       setLoading(false);
-    }, 1000); // Simula un retraso de red
-  }, [slug, id]); // Este efecto se ejecuta cada vez que 'slug' o 'id' cambian
+  }, [slug, id]);
 
   if (loading) {
     return (
@@ -49,9 +42,13 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="container mx-auto p-52">
-      <h1 className="text-3xl font-bold mb-4">{projectData.title}</h1>
-      <p className="text-lg mb-4">{projectData.description}</p>
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 text-center">
+      <h1 className="text-3xl font-extrabold mb-6 text-gray-900 leading-tight">
+        {projectData.title}
+      </h1>
+      <p className="text-9xl mb-8 text-gray-700 max-w-3xl">
+        {projectData.description}
+      </p>
     </div>
   );
 }
